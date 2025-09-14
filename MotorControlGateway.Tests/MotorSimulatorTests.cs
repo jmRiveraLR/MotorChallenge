@@ -8,10 +8,10 @@ namespace MotorControlGateway.Tests
         [Fact]
         public void Speed_Increases_Towards_Target()
         {
-            var motor = new MotorSimulator();
-            motor.SetSpeed(50);
+            var testMotor = new MotorSimulator();
+            testMotor.SetSpeed(50);
 
-            var status = motor.Update();
+            var status = testMotor.Update();
             Assert.True(status.Speed >= 0);
             Assert.Equal(50, status.TargetSpeed);
         }
@@ -31,6 +31,8 @@ namespace MotorControlGateway.Tests
             Assert.True(status.Stopped);
         }
 
+        //test overheat logic
+        // cambios realizados generaron respuesta rara de manera incial
         [Fact]
         public void Overheats_When_Temperature_Reaches_Limit()
         {

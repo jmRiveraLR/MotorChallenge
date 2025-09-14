@@ -8,19 +8,20 @@ namespace MotorControlGateway.Tests
 {
     public class MotorControllerTests
     {
-        private readonly MotorController _controller;
-        private readonly MotorSimulator _motor;
+        private readonly MotorController testController;
+        private readonly MotorSimulator testMotor;
 
         public MotorControllerTests()
         {
-            _motor = new MotorSimulator();
-            _controller = new MotorController(_motor);
+            testMotor = new MotorSimulator();
+            testController = new MotorController(testMotor);
         }
 
+        // tests to see is i get expected responses
         [Fact]
         public void GetStatus_Returns_Status()
         {
-            var result = _controller.GetStatus();
+            var result = testController.GetStatus();
             Assert.NotNull(result.Value);
             Assert.IsType<MotorStatus>(result.Value);
         }
@@ -28,7 +29,7 @@ namespace MotorControlGateway.Tests
         [Fact]
         public void SetSpeed_Updates_TargetSpeed()
         {
-            var result = _controller.SetSpeed(80) as OkObjectResult;
+            var result = testController.SetSpeed(80) as OkObjectResult;
             var status = result?.Value as MotorStatus;
 
             Assert.NotNull(status);
@@ -38,7 +39,7 @@ namespace MotorControlGateway.Tests
         [Fact]
         public void SetMode_Changes_Mode()
         {
-            var result = _controller.SetMode("sport") as OkObjectResult;
+            var result = testController.SetMode("sport") as OkObjectResult;
             var status = result?.Value as MotorStatus;
 
             Assert.NotNull(status);
@@ -48,7 +49,7 @@ namespace MotorControlGateway.Tests
         [Fact]
         public void Stop_Sets_Stopped_Flag()
         {
-            var result = _controller.Stop() as OkObjectResult;
+            var result = testController.Stop() as OkObjectResult;
             var status = result?.Value as MotorStatus;
 
             Assert.NotNull(status);
@@ -58,7 +59,7 @@ namespace MotorControlGateway.Tests
         [Fact]
         public void SetTempLimit_Updates_Limit()
         {
-            var result = _controller.SetTempLimit(40) as OkObjectResult;
+            var result = testController.SetTempLimit(40) as OkObjectResult;
             var status = result?.Value as MotorStatus;
 
             Assert.NotNull(status);
