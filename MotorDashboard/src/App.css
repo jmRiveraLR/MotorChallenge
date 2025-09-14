@@ -1,0 +1,172 @@
+
+
+body {
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  background-color:burlywood ;
+}
+
+.app {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 920px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: cadetblue;
+}
+
+.title {
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+.loading {
+  font-style: italic;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns instead of 4 for balance */
+  gap: 16px;
+  margin: 20px 0;
+
+  padding: 16px;                   /* inner spacing */
+  border-radius: 8px;              /* rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+  border: 1px solid #ddd;          /* soft border */
+}
+
+.status-grid > div {
+  text-align: center;
+  padding: 10px;
+  background:#333;             /* light background for each cell */
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;   /* center flex children horizontally */
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  text-align: center;        /* center inline text inside children */
+}
+
+.controls select {
+  padding: 8px 12px;          /* same as buttons */
+  border-radius: 6px;         /* same roundness */
+  border: 1px solid #ccc;     /* subtle border */
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 120px;           /* force width similar to buttons */
+  text-align: center;
+}
+
+.controls select:focus {
+  outline: none;
+  border-color: #1976d2;      /* highlight on focus */
+}
+
+.speed-control {
+  display: flex;
+  flex-direction: column;   /* stack label on top of slider */
+  align-items: center;      /* center slider horizontally */
+  min-width: 1250;
+  margin-top: 8px;          /* spacing from other controls */
+}
+
+.speed-control label {
+  margin-bottom: 8px;       /* spacing between text and slider */
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* Make temp limit textbox match button size */
+.limits-row input[type="text"] {
+  padding: 8px 12px;              /* same padding as button */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  height: 36px;                   /* match button height */
+  width: 120px;                   /* adjust to align with buttons */
+  box-sizing: border-box;
+  margin-left: 10px;          /* spacing from label */
+}
+
+/* optional: align text nicely */
+.limits-row input[type="text"]:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25,118,210,0.2);
+}
+.stop-btn {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.chart-container {
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #eee inset;
+  margin-top: 16px;
+}
+
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+.popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 360px;
+  text-align: center;
+  color: #333;                /* dark text for readability */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Popup title */
+.popup-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #e53935;             /* red to match overheating */
+  font-weight: bold;
+}
+
+/* Popup button */
+.popup button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #e53935;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background: #c62828;
+}

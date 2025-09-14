@@ -1,0 +1,17 @@
+# .NET build
+bin/
+obj/
+*.user
+*.vs
+
+# React build
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
