@@ -31,7 +31,7 @@ Its a motor simulation with telemetry broadcasting for real-time visualization.
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/MotorControlGateway.git
+    git clone https://github.com/jmRiveraLR/MotorControlGateway.git
     ```
 1.1  Backend: MotorControlGateway
 
